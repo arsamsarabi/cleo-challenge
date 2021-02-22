@@ -1,8 +1,14 @@
-import React from 'react';
-import welcomeIcon from './assets/welcome.jpg';
+import React, { FC } from 'react'
+import { ThemeProvider } from 'styled-components'
 
-const App: React.FunctionComponent = () => (
-  <img src={welcomeIcon} alt="Welcome!"/>
-);
+import { theme, GlobalStyles } from './constants/styles'
+import welcomeIcon from './assets/welcome.jpg'
 
-export default App;
+const App: FC = () => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyles />
+    <img src={welcomeIcon} alt="Welcome!" />
+  </ThemeProvider>
+)
+
+export default App
