@@ -37,3 +37,27 @@ type Theme = {
 type WithTheme = {
   theme: Theme
 }
+
+/* ------------------------------------
+  Redux
+------------------------------------ */
+type Transaction = {
+  amount: number
+  date: string
+  id: number
+}
+
+type Merchant = {
+  categoryId: number
+  iconUrl: string
+  id: string
+  isBill: boolean
+  name: string
+  transactions: Transaction[]
+}
+
+type Category = {
+  iconUrl: string
+  name: string
+  id: number
+}
