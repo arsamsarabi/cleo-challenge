@@ -1,13 +1,20 @@
-import React, { lazy, Suspense } from 'react'
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
+import React, { lazy, Suspense, FC } from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from 'react-router-dom'
 
 import { Layout, Loading } from '../components'
 import { routes } from './routes'
 
 const Bills = lazy(() => import('../screens/bills/Bills'))
-const PotentialBills = lazy(() => import('../screens/potentialBills/PotentialBills'))
+const PotentialBills = lazy(
+  () => import('../screens/potentialBills/PotentialBills')
+)
 
-export const AppRouter = () => {
+export const AppRouter: FC = () => {
   return (
     <Router>
       <Suspense fallback={<Loading />}>

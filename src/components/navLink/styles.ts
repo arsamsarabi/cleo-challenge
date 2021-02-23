@@ -35,10 +35,10 @@ export const Link = styled(RouterLink)(
         ${activeStyles}
       `}
     `
-  },
+  }
 )
 
-export const Label = styled.p(({ theme: { measurements, palette } }: WithTheme) => {
+export const Label = styled.p(({ theme: { measurements } }: WithTheme) => {
   return css`
     margin-left: ${measurements.small};
     font-size: 24px;

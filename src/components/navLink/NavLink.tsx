@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { IconType } from 'react-icons'
 import { useLocation } from 'react-router-dom'
 
@@ -11,8 +11,8 @@ interface NavLinkProps {
   label: string
 }
 
-export const NavLink = ({ Icon, to, label }: NavLinkProps) => {
-  let location = useLocation()
+export const NavLink: FC<NavLinkProps> = ({ Icon, to, label }) => {
+  const location = useLocation()
   return (
     <Link to={to} isactive={location.pathname === to ? 1 : 0}>
       <Icon size={24} title={label} />

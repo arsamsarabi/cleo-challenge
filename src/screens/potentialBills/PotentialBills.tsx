@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import { Wrapper } from './styles'
 
-const PotentialBills = () => {
+const PotentialBills: FC = () => {
   return (
     <Wrapper>
       <h1>Potential Bills</h1>

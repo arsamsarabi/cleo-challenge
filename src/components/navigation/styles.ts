@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.nav(({ theme: { measurements, palette } }: WithTheme) => {
+export const Wrapper = styled.nav(({ theme: { measurements } }: WithTheme) => {
   return css`
     width: 320px;
     padding: ${measurements.large};
