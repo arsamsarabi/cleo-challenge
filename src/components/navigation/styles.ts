@@ -11,8 +11,9 @@ export const Wrapper = styled.nav(({ theme: { measurements } }: WithTheme) => {
   `
 })
 
-export const Logo = styled.img(() => {
+export const Logo = styled.img<WithTheme>(({ theme: { measurements } }) => {
   return css`
     width: 160px;
+    margin-bottom: ${measurements.medium};
   `
 })

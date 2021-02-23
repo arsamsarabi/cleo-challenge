@@ -13,7 +13,7 @@ export const Link = styled(RouterLink)(
 
     return css`
       width: 100%;
-      height: 48px;
+      height: 32px;
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -40,7 +40,7 @@ export const Link = styled(RouterLink)(
 
 export const Label = styled.p(({ theme: { measurements } }: WithTheme) => {
   return css`
-    margin-left: ${measurements.small};
-    font-size: 24px;
+    margin-left: ${measurements.medium};
+    font-size: 20px;
   `
 })
