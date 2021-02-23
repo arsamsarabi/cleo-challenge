@@ -1,14 +1,17 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
+import { ErrorBoundary } from './components'
 import { theme, GlobalStyles } from './constants/styles'
-import welcomeIcon from './assets/welcome.jpg'
+import { AppRouter } from './navigation'
 
-const App: FC = () => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyles />
-    <img src={welcomeIcon} alt="Welcome!" />
-  </ThemeProvider>
+const App = () => (
+  <ErrorBoundary>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <AppRouter />
+    </ThemeProvider>
+  </ErrorBoundary>
 )
 
 export default App

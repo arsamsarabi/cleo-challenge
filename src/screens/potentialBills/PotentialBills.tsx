@@ -2,10 +2,12 @@ import React from 'react'
 
 import { Wrapper } from './styles'
 
-export const Merchants = () => {
+const PotentialBills = () => {
   return (
     <Wrapper>
-      <h1>Merchants</h1>
+      <h1>Potential Bills</h1>
     </Wrapper>
   )
 }
+
+export default PotentialBills
