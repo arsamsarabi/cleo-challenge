@@ -2,16 +2,6 @@
   "name": "fe-interview",
   "version": "0.1.1",
   "private": true,
-  "dependencies": {
-    "apisauce": "^2.0.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-icons": "^4.2.0",
-    "react-is": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
-    "styled-components": "^5.2.1"
-  },
   "scripts": {
     "api": "json-server --watch db.json --port 3002",
     "start": "PORT=3001 react-scripts start",
@@ -42,6 +32,17 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0",
+    "react-is": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "styled-components": "^5.2.1"
+  },
   "devDependencies": {
     "@testing-library/dom": "^7.29.6",
     "@testing-library/jest-dom": "^5.11.4",
@@ -51,6 +52,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "@types/react-redux": "^7.1.16",
     "@types/react-router-dom": "^5.1.7",
     "@types/styled-components": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
