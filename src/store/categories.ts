@@ -28,7 +28,7 @@ const { setCategories, setLoading, setError } = categoriesSlice.actions
 
 const selectCategories = (state: {
   categoriesStore: CategoryState
-}): Category[] => state.categoriesStore.categories
+}): CategoryState => state.categoriesStore
 
 export default categoriesSlice.reducer
 export { setCategories, setLoading, setError, selectCategories }
