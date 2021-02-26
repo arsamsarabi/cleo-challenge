@@ -1,28 +1,34 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { RootState } from './store'
+import type { Category, CategoryState } from './types'
 
-interface CategoriesStoreState {
-  categories: Category[]
-}
-
-const initialState: CategoriesStoreState = {
+const initialState: CategoryState = {
   categories: [],
+  loading: false,
+  errors: '',
 }
 
 export const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
   reducers: {
-    fetchCategories: (state) => {
-      return state
+    setCategories: (state, { payload }: PayloadAction<Category[]>) => {
+      state.categories = payload
+    },
+    setLoading: (state, { payload }: PayloadAction<boolean>) => {
+      state.loading = payload
+    },
+    setError: (state, { payload }: PayloadAction<string>) => {
+      state.errors = payload
     },
   },
 })
 
-const { fetchCategories } = categoriesSlice.actions
+const { setCategories, setLoading, setError } = categoriesSlice.actions
 
-const selectCategories = (state: RootState): Category[] => state.categories
+const selectCategories = (state: {
+  categoriesStore: CategoryState
+}): Category[] => state.categoriesStore.categories
 
 export default categoriesSlice.reducer
-export { fetchCategories, selectCategories }
+export { setCategories, setLoading, setError, selectCategories }

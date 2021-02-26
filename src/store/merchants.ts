@@ -1,36 +1,46 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { RootState } from './store'
+import type { Merchant, MerchantState } from './types'
 
-interface MerchantsStoreState {
-  merchants: Merchant[]
-}
-
-const initialState: MerchantsStoreState = {
+const initialState: MerchantState = {
   merchants: [],
+  loading: false,
+  errors: '',
 }
 
 export const merchantsSlice = createSlice({
   name: 'merchants',
   initialState,
   reducers: {
-    fetchMerchants: (state) => {
-      return state
+    setMerchants: (state, { payload }: PayloadAction<Merchant[]>) => {
+      state.merchants = payload
     },
-    updateBill: (state, action: PayloadAction<boolean>) => {
-      console.log(action.payload)
-      return state
+    setLoading: (state, { payload }: PayloadAction<boolean>) => {
+      state.loading = payload
+    },
+    setError: (state, { payload }: PayloadAction<string>) => {
+      state.errors = payload
     },
   },
 })
 
-const { fetchMerchants, updateBill } = merchantsSlice.actions
+const { setMerchants, setLoading, setError } = merchantsSlice.actions
 
-const selectBills = (state: RootState): Merchant[] =>
-  state.merchants.filter((m: Merchant) => m.isBill)
+const selectBills = (state: {
+  merchantsStore: MerchantState
+}): MerchantState => ({
+  merchants: state.merchantsStore.merchants.filter((m: Merchant) => m.isBill),
+  loading: state.merchantsStore.loading,
+  errors: state.merchantsStore.errors,
+})
 
-const selectPotentialBills = (state: RootState): Merchant[] =>
-  state.merchants.filter((m: Merchant) => !m.isBill)
+const selectPotentialBills = (state: {
+  merchantsStore: MerchantState
+}): MerchantState => ({
+  merchants: state.merchantsStore.merchants.filter((m: Merchant) => !m.isBill),
+  loading: state.merchantsStore.loading,
+  errors: state.merchantsStore.errors,
+})
 
 export default merchantsSlice.reducer
-export { fetchMerchants, updateBill, selectBills, selectPotentialBills }
+export { setMerchants, setLoading, setError, selectPotentialBills, selectBills }
