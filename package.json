@@ -13,12 +13,6 @@
     "stylelint": "stylelint './src/**/*.ts'",
     "lint": "yarn stylelint && yarn eslint && yarn prettier"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",

@@ -16,7 +16,6 @@ export const ActionButton = styled.button<ActionButtonProps>(
 
     return css`
       outline: none;
-      border: none;
       color: ${colorMap[mode]};
       background-color: ${palette.common.white};
       padding: ${measurements.small} ${measurements.medium};
