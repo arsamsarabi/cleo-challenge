@@ -17,9 +17,13 @@ type Palette = {
   yellow: string
   blue: string
   grey: ComplexColor
+  common: {
+    [key in string]: string
+  }
 }
 
 type Measurements = {
+  xsmall: string
   small: string
   medium: string
   large: string

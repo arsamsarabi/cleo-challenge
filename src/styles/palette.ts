@@ -13,4 +13,10 @@ export const palette: Palette = {
     800: '#424242',
     900: '#212121',
   },
+  common: {
+    white: '#ffffff',
+    black: '#000000',
+    green: '#16a085',
+    red: '#c0392b',
+  },
 }

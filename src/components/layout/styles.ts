@@ -21,6 +21,7 @@ export const MainContent = styled.section(
       display: flex;
       flex-direction: column;
       overflow-y: auto;
+      margin: 4px 0;
     `
   }
 )

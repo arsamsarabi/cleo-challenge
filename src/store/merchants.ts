@@ -21,10 +21,14 @@ export const merchantsSlice = createSlice({
     setError: (state, { payload }: PayloadAction<string>) => {
       state.errors = payload
     },
+    updateMerchantBill: (state, { payload }: PayloadAction<Merchant>) => {
+      const merchantToUpdate = state.merchants.find(
+        (m: Merchant) => m.id === payload.id
+      ) as Merchant
+      merchantToUpdate.isBill = !merchantToUpdate.isBill
+    },
   },
 })
-
-const { setMerchants, setLoading, setError } = merchantsSlice.actions
 
 const selectBills = (state: {
   merchantsStore: MerchantState
@@ -42,5 +46,19 @@ const selectPotentialBills = (state: {
   errors: state.merchantsStore.errors,
 })
 
+const {
+  setMerchants,
+  setLoading,
+  setError,
+  updateMerchantBill,
+} = merchantsSlice.actions
+
 export default merchantsSlice.reducer
-export { setMerchants, setLoading, setError, selectPotentialBills, selectBills }
+export {
+  setMerchants,
+  setLoading,
+  setError,
+  updateMerchantBill,
+  selectPotentialBills,
+  selectBills,
+}

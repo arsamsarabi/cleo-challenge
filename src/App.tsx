@@ -1,21 +1,39 @@
-import React, { FC } from 'react'
-import { ThemeProvider } from 'styled-components'
-import { Provider } from 'react-redux'
+import React, { FC, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { ErrorBoundary } from './components'
-import { theme, GlobalStyles } from './styles'
+import { ErrorBoundary, Loading } from './components'
+import { GlobalStyles } from './styles'
 import { AppRouter } from './navigation'
-import { store } from './store'
+import { fetchMerchants, fetchCategories } from './api'
+import { selectBills } from './store/merchants'
+import { selectCategories } from './store/categories'
 
-const App: FC = () => (
-  <ErrorBoundary>
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <AppRouter />
-      </ThemeProvider>
-    </Provider>
-  </ErrorBoundary>
-)
+const App: FC = () => {
+  const dispatch = useDispatch()
+  const { loading, errors } = useSelector(selectBills)
+  const { loading: categoriesLoading, errors: categoriesErrors } = useSelector(
+    selectCategories
+  )
 
+  useEffect(() => {
+    dispatch(fetchMerchants())
+    dispatch(fetchCategories())
+  }, [])
+
+  if (loading || categoriesLoading) return <Loading />
+
+  if (errors || categoriesErrors)
+    return (
+      <div>
+        <h1>Error fetching API data! refresh the page to try again.</h1>
+      </div>
+    )
+
+  return (
+    <ErrorBoundary>
+      <GlobalStyles />
+      <AppRouter />
+    </ErrorBoundary>
+  )
+}
 export default App

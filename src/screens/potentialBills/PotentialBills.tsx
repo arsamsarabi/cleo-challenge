@@ -1,31 +1,34 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { CgPlayListAdd } from 'react-icons/cg'
 
-import { fetchMerchants } from '../../api'
-import { Wrapper } from './styles'
+import { patchMerchantBill } from '../../api'
 import { selectPotentialBills } from '../../store/merchants'
 import { selectCategories } from '../../store/categories'
+import type { Merchant } from '../../store'
+import { MerchantsTable } from '../../components'
 
 const PotentialBills: FC = () => {
   const dispatch = useDispatch()
-  const { merchants, loading, errors } = useSelector(selectPotentialBills)
-  const {
-    categories,
-    loading: categoriesLoading,
-    errors: categoriesErrors,
-  } = useSelector(selectCategories)
+  const { merchants } = useSelector(selectPotentialBills)
+  const { categories } = useSelector(selectCategories)
 
-  useEffect(() => {
-    dispatch(fetchMerchants())
-  }, [])
-
-  console.log('PotentialBills', merchants, loading, errors)
-  console.log('PotentialBills', categories, categoriesLoading, categoriesErrors)
+  const addBill = (m: Merchant) => {
+    dispatch(patchMerchantBill(m))
+  }
 
   return (
-    <Wrapper>
-      <h1>PotentialBills</h1>
-    </Wrapper>
+    <MerchantsTable
+      merchants={merchants}
+      categories={categories}
+      pageTitle="Potential Bills"
+      merchantAction={{
+        Icon: <CgPlayListAdd size={24} />,
+        action: addBill,
+        colorMode: 'success',
+        label: 'Add bill',
+      }}
+    />
   )
 }
 

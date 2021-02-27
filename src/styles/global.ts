@@ -13,8 +13,9 @@ export const GlobalStyles = createGlobalStyle(
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: ${palette.grey[900]};
+        color: ${palette.grey[800]};
         background-color: ${palette.grey[300]};
+        font-size: 18px;
       }
 
       code {
