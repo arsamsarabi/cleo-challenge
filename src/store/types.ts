@@ -9,7 +9,7 @@ export type Transaction = {
 
 export type Merchant = {
   categoryId: number
-  iconUrl: string
+  iconUrl: string | null
   id: string
   isBill: boolean
   name: string

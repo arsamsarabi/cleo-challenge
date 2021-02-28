@@ -1,21 +1,18 @@
 import React, { FC } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { CgPlayListRemove } from 'react-icons/cg'
 
 import { patchMerchantBill } from '../../api'
 import { selectBills } from '../../store/merchants'
 import { selectCategories } from '../../store/categories'
 import type { Merchant } from '../../store'
+import { useAppDispatch } from '../../store'
 import { MerchantsTable } from '../../components'
 
 const Bills: FC = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const { merchants } = useSelector(selectBills)
   const { categories } = useSelector(selectCategories)
-
-  const removeBill = (m: Merchant) => {
-    dispatch(patchMerchantBill(m))
-  }
 
   return (
     <MerchantsTable
@@ -24,7 +21,7 @@ const Bills: FC = () => {
       pageTitle="Bills"
       merchantAction={{
         Icon: <CgPlayListRemove size={24} />,
-        action: removeBill,
+        action: (m: Merchant) => dispatch(patchMerchantBill(m)),
         colorMode: 'danger',
         label: 'Remove bill',
       }}

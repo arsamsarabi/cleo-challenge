@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import type { Merchant, MerchantState } from './types'
 
-const initialState: MerchantState = {
+export const initialState: MerchantState = {
   merchants: [],
   loading: false,
   errors: '',

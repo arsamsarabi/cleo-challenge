@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CategoryIcon /> Should have expected css styling 1`] = `
+.c0 {
+  width: 20px;
+  height: 20px;
+}
+
+<img
+  class="c0"
+  data-testid="category-icon"
+/>
+`;
+
+exports[`<MerchantImage /> Should have expected css styling 1`] = `
+.c0 {
+  display: block;
+  position: relative;
+}
+
+.c0:before {
+  content: 'Failed to load image :(';
+  background-color: #eeeeee;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 0.8rem;
+  padding: 8px;
+  color: #bdbdbd;
+}
+
+.c1 {
+  width: 75px;
+  height: 75px;
+  margin-right: 32px;
+}
+
+<img
+  class="c0 c1"
+/>
+`;
+
+exports[`<MerchantNameRow /> Should have expected css styling 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 h1 {
+  font-size: 1.25rem;
+  color: #424242;
+  margin-bottom: 16px;
+  margin-left: 8px;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`<TransactionSummary /> Should have expected css styling 1`] = `
+.c0 {
+  font-size: 0.9rem;
+  color: #616161;
+}
+
+.c0 span {
+  font-weight: bold;
+}
+
+.c0 span:first-of-type {
+  margin-right: 4px;
+}
+
+.c0 span:last-of-type {
+  margin-left: 4px;
+}
+
+<p
+  class="c0"
+/>
+`;
+
+exports[`<Wrapper /> Should have expected css styling 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 16px;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0 svg {
+  margin: 0 32px 0 auto;
+}
+
+<div
+  class="c0"
+/>
+`;

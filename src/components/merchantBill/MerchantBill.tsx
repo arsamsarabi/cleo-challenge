@@ -7,7 +7,7 @@ import { ActionButton } from '../button/Button'
 import type { ButtonColorMode } from '../button/Button'
 import { Wrapper, ActionsRow } from './styles'
 
-interface MerchantBillProps {
+export interface MerchantBillProps {
   merchant: Merchant
   category: Category
   billAction: {
@@ -26,7 +26,7 @@ export const MerchantBill: FC<MerchantBillProps> = ({
   const [open, setOpen] = useState(false)
 
   return (
-    <Wrapper>
+    <Wrapper data-testid={merchant.id}>
       <BillSummary
         merchant={merchant}
         category={category}
@@ -37,6 +37,7 @@ export const MerchantBill: FC<MerchantBillProps> = ({
         <ActionButton
           onClick={() => billAction.action(merchant)}
           mode={billAction.colorMode}
+          data-testid={`action-button-${merchant.id}`}
         >
           {billAction.Icon}
           {billAction.label}

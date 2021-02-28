@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 
-import type { Merchant, Transaction, Category } from '../../store'
+import type { Merchant, Category } from '../../store'
 import DefaultPlaceholderImage from '../../assets/default-placeholder-image.png'
 import {
   Wrapper,
@@ -10,8 +10,9 @@ import {
   MerchantNameRow,
   TransactionSummary,
 } from './styles'
+import { calcSumTransactions } from '../../utils'
 
-interface BillSummaryProps {
+export interface BillSummaryProps {
   merchant: Merchant
   category: Category
   handleClick: (open: boolean) => void
@@ -24,15 +25,14 @@ export const BillSummary: FC<BillSummaryProps> = ({
   handleClick,
   open,
 }) => {
-  const totalAmount = merchant.transactions
-    .reduce((acc: number, curr: Transaction) => acc + curr.amount, 0)
-    .toFixed(2)
+  const totalAmount = calcSumTransactions(merchant.transactions)
 
   return (
-    <Wrapper onClick={() => handleClick(!open)}>
+    <Wrapper onClick={() => handleClick(!open)} data-testid="summary-wrapper">
       <MerchantImage
         src={merchant.iconUrl || DefaultPlaceholderImage}
         alt="Merchant icon"
+        data-testid="merchant-icon"
       />
 
       <div>
@@ -45,11 +45,15 @@ export const BillSummary: FC<BillSummaryProps> = ({
         <TransactionSummary>
           <span>{merchant.transactions.length}</span>
           transactions amounting to
-          <span>£{totalAmount}</span>
+          <span data-testid="transactions-total-amount">£{totalAmount}</span>
         </TransactionSummary>
       </div>
 
-      {open ? <FaChevronUp /> : <FaChevronDown />}
+      {open ? (
+        <FaChevronUp data-testid="chevron-up" />
+      ) : (
+        <FaChevronDown data-testid="chevron-down" />
+      )}
     </Wrapper>
   )
 }

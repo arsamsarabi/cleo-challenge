@@ -10,7 +10,7 @@ interface TransactionsProps {
 
 export const Transactions: FC<TransactionsProps> = ({ transactions }) => {
   return (
-    <Wrapper>
+    <Wrapper data-testid="transactions-wrapper">
       <p>Transaction history:</p>
       {transactions.map(({ id, amount, date }: Transaction, i: number) => (
         <Details key={id}>

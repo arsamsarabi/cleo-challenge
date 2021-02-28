@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ActionButton /> Should have correct danger css rules 1`] = `
+.c0 {
+  outline: none;
+  color: #c0392b;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  min-height: 40px;
+  min-width: 140px;
+  text-transform: uppercase;
+  border: 2px solid #c0392b;
+  border-radius: 4px;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 svg {
+  color: #c0392b;
+  margin-right: 16px;
+}
+
+.c0:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #c0392b;
+  font-weight: bold;
+  border-color: #c0392b;
+}
+
+.c0:hover svg {
+  color: #ffffff;
+}
+
+<button
+  class="c0"
+  data-testid="action-button"
+  mode="danger"
+/>
+`;
+
+exports[`<ActionButton /> Should have correct default css rules 1`] = `
+.c0 {
+  outline: none;
+  color: #0815FF;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  min-height: 40px;
+  min-width: 140px;
+  text-transform: uppercase;
+  border: 2px solid #0815FF;
+  border-radius: 4px;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 svg {
+  color: #0815FF;
+  margin-right: 16px;
+}
+
+.c0:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #0815FF;
+  font-weight: bold;
+  border-color: #0815FF;
+}
+
+.c0:hover svg {
+  color: #ffffff;
+}
+
+<button
+  class="c0"
+  data-testid="action-button"
+/>
+`;
+
+exports[`<ActionButton /> Should have correct success css rules 1`] = `
+.c0 {
+  outline: none;
+  color: #16a085;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  min-height: 40px;
+  min-width: 140px;
+  text-transform: uppercase;
+  border: 2px solid #16a085;
+  border-radius: 4px;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 svg {
+  color: #16a085;
+  margin-right: 16px;
+}
+
+.c0:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #16a085;
+  font-weight: bold;
+  border-color: #16a085;
+}
+
+.c0:hover svg {
+  color: #ffffff;
+}
+
+<button
+  class="c0"
+  data-testid="action-button"
+  mode="success"
+/>
+`;

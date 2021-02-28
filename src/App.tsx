@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import { ErrorBoundary, Loading } from './components'
 import { GlobalStyles } from './styles'
@@ -7,9 +7,10 @@ import { AppRouter } from './navigation'
 import { fetchMerchants, fetchCategories } from './api'
 import { selectBills } from './store/merchants'
 import { selectCategories } from './store/categories'
+import { useAppDispatch } from './store'
 
 const App: FC = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const { loading, errors } = useSelector(selectBills)
   const { loading: categoriesLoading, errors: categoriesErrors } = useSelector(
     selectCategories

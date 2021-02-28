@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import type { Category, CategoryState } from './types'
 
-const initialState: CategoryState = {
+export const initialState: CategoryState = {
   categories: [],
   loading: false,
   errors: '',

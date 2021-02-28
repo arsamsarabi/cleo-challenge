@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
 
-import type { Category, Merchant, Transaction } from '../../store'
+import type { Category, Merchant } from '../../store'
 import { MerchantBill } from '../merchantBill/MerchantBill'
 import { Wrapper, PageHeader } from './styles'
 import type { ButtonColorMode } from '../button/Button'
+import { calcSumMerchants } from '../../utils'
 
 export type MerchantActionType = {
   action: (m: Merchant) => void
@@ -12,7 +13,7 @@ export type MerchantActionType = {
   Icon: JSX.Element
 }
 
-interface MerchantsTableProps {
+export interface MerchantsTableProps {
   merchants: Merchant[]
   categories: Category[]
   pageTitle: string
@@ -25,15 +26,7 @@ export const MerchantsTable: FC<MerchantsTableProps> = ({
   pageTitle,
   merchantAction,
 }) => {
-  const grandTotal = merchants
-    .reduce((total: number, merchant: Merchant) => {
-      const merchantTotal = merchant.transactions.reduce(
-        (acc: number, transaction: Transaction) => acc + transaction.amount,
-        0
-      )
-      return total + merchantTotal
-    }, 0)
-    .toFixed(2)
+  const grandTotal = calcSumMerchants(merchants)
 
   return (
     <Wrapper>
