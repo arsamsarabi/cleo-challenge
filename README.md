@@ -1,3 +1,16 @@
+## Developer notes:
+
+I have spent just about 5 hours on this task, maybe a little more :)! The solution is fully implemented. Unit tests have been written for some various components and functions but the coverage is nowhere near perfect, due to time constraints.
+If I was going to spend more time on this, I would have perhaps liked to:
+1. Implement the UI mobile first, perhaps by using a CSS framework like [tailwind CSS](https://tailwindcss.com/). The current UI is not responsive.
+2. Achieve a higher unit test coverage percentage.
+3. Write some [Cypress](https://www.cypress.io/) tests
+4. Implement some sort of internationalization/ localization solution.
+
+👨🏻‍💻 Arsam Sarabi <br/>
+📧 arsamsarabi@me.com
+
+
 ## Cleo Frontend Interview - Bills
 ### Get Started
 1. Fork or clone this repo (a simple [`create-react-app`](https://github.com/facebook/create-react-app) extended with [`json-server`](https://github.com/typicode/json-server) and some Cleo-specific goodies)
