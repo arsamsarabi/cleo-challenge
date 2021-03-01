@@ -6,6 +6,7 @@ export const Wrapper = styled.main<WithTheme>(({ theme: { palette } }) => {
     display: flex;
     flex-direction: column;
     background-color: ${palette.grey[50]};
+    max-width: 1024px;
   `
 })
 
